@@ -1,0 +1,176 @@
+<html><body><h1 id="stayintouch">StayInTouch</h1>
+<p>Staying in touch with close friends requires more effort when everybody lives somewhere else on the planet. Scheduling calls to catch up certainly works, but it requires time-commitment, and time zones make scheduling unnecessarily complicated.</p>
+<p>After living in NYC for a year, I ended up doing the following: If I walk somewhere for about 30 minutes, I'd text 2 friends or family members, asking if they're available for a chat. Often one of them would end up calling me. This way, no prior planning was necessary, things felt more spontaneous and I was able to use my NYC walking time, a city in which I walk 20,000 steps a day on average.</p>
+<p><strong>The problems</strong>: </p>
+<ul>
+<li>If I text a friend <code>Hey X, are you free for a call?</code>, chances are they're at work, asleep, with friends or don't look at their phone. They'd see my message 2 hours later and reply <code>Yep, sure, calling you now</code>. The problem here is that by that time I'm unavailable, as the message is from 2 hours ago. </li>
+<li>If a friend doesn't know about this setup, they'd think I want to discuss something specific or urgent, however those kinds of calls are just to catch up and stay in touch.</li>
+<li>Often, either none of my friends were available, or multiple responded, so it was always a tricky balance on how many friends I'd text, with the risk of both of them replying <code>Yep, I'm free now</code></li>
+<li>If one friend is never available, you kind of "forget" to text them, as you already assume subconsciously that they won't be available</li>
+</ul>
+<p><strong>The solution</strong>: A Telegam bot that manages the communication for me and revokes messages as soon as I'm unavailable again. </p>
+<p><strong>How does it work</strong>:</p>
+<ol>
+<li>You add all the Telegram contacts using <code>/newcontact [username]</code></li>
+<li>You type <code>/free</code> to mark yourself as available</li>
+<li>You tell the bot how many minutes you'll be free (this number will be sent as part of the message to your friends)</li>
+<li>The bot now sends out messages to all your friends in your contact list, one message every 20 seconds</li>
+<li>The order in which the messages are sent is based on when you last had a call with them, to prefer people you haven't chatted in a while</li>
+<li>As soon as your first friend hits the <code>/confirm</code> button</li>
+<li>You and your friend will be connected</li>
+<li>All other invites will be revoked, meaning if e.g. the friend was sleeping during that time, they won't even see that there ever was a message</li>
+</ol>
+<p><strong>Why Telegram?</strong></p>
+<ul>
+<li>It works on every major platform, including iOS, Android and macOS</li>
+<li>It supports revoking of messages and notifications, even from the lock screen</li>
+<li>They have a solid bots API</li>
+</ul>
+<table>
+  <tr>
+    <td>
+      <img src="assets/screenshot1_framed.png">
+    </td>
+    <td>
+      <img src="assets/screenshot2_framed.png">
+    </td>
+    <td>
+      <img src="assets/screenshot3_framed.png">
+    </td>
+  </tr>
+</table>
+<h3 id="start-using-tmewalkwithfriendsbothttpstmewalkwithfriendsbot"><a href="https://t.me/WalkWithFriendsBot">Start using t.me/WalkWithFriendsBot</a></h3>
+<h2 id="how-to-use-it">How to use it</h2>
+<p>You'll have to setup a few things</p>
+<ul>
+<li>Create a Telegram bot using <a href="https://github.com/BotFather">@BotFather</a> and get the API key</li>
+<li>Provide those values using <code>TELEGRAM_TOKEN</code></li>
+<li>Host it on any server, like Heroku</li>
+<li>Make sure the Heroku worker is enabled</li>
+</ul>
+<h2 id="telegram-commands">Telegram commands</h2>
+<pre><code>free - available for a call
+stop - mark yourself as unavailable for a call
+newcontact - [name] Add a new contact
+removecontact - [name] Remove an existing contact
+contacts - list all your contacts
+track - manually track a call if you hung out IRL
+stats - print basic stats about the bot
+help - print help screen
+</code></pre>
+<h2 id="development">Development</h2>
+<h3 id="dependencies">Dependencies</h3>
+<pre><code>bundle install
+</code></pre>
+<pre><code>bundle exec ruby worker.rb
+</code></pre>
+<h3 id="environment-variables">Environment variables</h3>
+<pre><code>TELEGRAM_TOKEN
+DATABASE_URL
+</code></pre>
+<style type='text/css'>body {
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal; 
+  margin: 30px;
+  max-width: 980px;
+  border: 1px solid #e1e4e8;
+  padding: 30px 40px;
+  border-radius: 2px;
+}
+
+/**
+ * Links
+ */
+a {
+  color: #0366d6;
+  text-decoration: none; }
+  a:visited {
+    color: #0366d6; }
+  a:hover {
+    color: #0366d6;
+    text-decoration: underline; }
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+/**
+  * Code blocks
+  */
+
+code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+
+pre > code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+  font-size: 100%;
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+p {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #24292e; }
+
+ul {
+  margin-top: 0; }
+
+li {
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; }
+
+li + li {
+  margin-top: 0.25em; }
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #24292e; }
+
+a:visited {
+  color: #0366d6; }
+
+h1, h2, h3 {
+  border-bottom: 1px solid #eaecef;
+  color: #111;
+  /* Darker */ }</style></body></html>
