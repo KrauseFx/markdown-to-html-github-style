@@ -15,8 +15,8 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       ghMentions: true,
     });
 
-    let preContent = "<html><body>"
-    let postContent = "<style type='text/css'>" + styleData + "</style></body></html>";
+    let preContent = "<html><body><div id='content'>"
+    let postContent = "</div><style type='text/css'>" + styleData + "</style></body></html>";
 
     html = preContent + converter.makeHtml(text) + "\n" + postContent
 

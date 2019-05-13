@@ -1,4 +1,4 @@
-<html><body><h1 id="stayintouch">StayInTouch</h1>
+<html><body><div id='content'><h1 id="stayintouch">StayInTouch</h1>
 <p>Staying in touch with close friends requires more effort when everybody lives somewhere else on the planet. Scheduling calls to catch up certainly works, but it requires time-commitment, and time zones make scheduling unnecessarily complicated.</p>
 <p>After living in NYC for a year, I ended up doing the following: If I walk somewhere for about 30 minutes, I'd text 2 friends or family members, asking if they're available for a chat. Often one of them would end up calling me. This way, no prior planning was necessary, things felt more spontaneous and I was able to use my NYC walking time, a city in which I walk 20,000 steps a day on average.</p>
 <p><strong>The problems</strong>: </p>
@@ -68,7 +68,7 @@ help - print help screen
 <pre><code>TELEGRAM_TOKEN
 DATABASE_URL
 </code></pre>
-<style type='text/css'>body {
+</div><style type='text/css'>body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background-color: #fdfdfd;
@@ -77,12 +77,18 @@ DATABASE_URL
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; 
-  margin: 30px;
-  max-width: 980px;
+  font-kerning: normal;
+  padding: 30px;
+}
+
+body > #content {
+  margin: 0px;
+  max-width: 900px;
   border: 1px solid #e1e4e8;
-  padding: 30px 40px;
+  padding: 10px 40px;
   border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**

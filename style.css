@@ -7,12 +7,18 @@ body {
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; 
-  margin: 30px;
-  max-width: 980px;
+  font-kerning: normal;
+  padding: 30px;
+}
+
+body > #content {
+  margin: 0px;
+  max-width: 900px;
   border: 1px solid #e1e4e8;
-  padding: 30px 40px;
+  padding: 10px 40px;
   border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**
