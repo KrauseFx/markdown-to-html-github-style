@@ -1,6 +1,6 @@
 var showdown  = require('showdown');
 var fs = require('fs');
-let filename = "README.md"
+let filename = "sample_markdown.md"
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
   fs.readFile(__dirname + '/' + filename, function (err, data) {
