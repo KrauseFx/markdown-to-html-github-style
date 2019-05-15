@@ -1,6 +1,6 @@
 var showdown  = require('showdown');
 var fs = require('fs');
-let filename = "sample_markdown.md"
+let filename = "README.md"
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
   fs.readFile(__dirname + '/' + filename, function (err, data) {
@@ -23,7 +23,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     converter.setFlavor('github');
     console.log(html);
 
-    let filePath = __dirname + "/output.html";
+    let filePath = __dirname + "/index.html";
     fs.writeFile(filePath, html, function(err) { 
       console.log("Done, saved to " + filePath);
     }); 

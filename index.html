@@ -1,0 +1,179 @@
+<html><body><div id='content'><h1 id="markdown-to-github-style-webcom"><code>markdown-to-github-style-web.com</code></h1>
+<blockquote>
+  <p>Because GitHub's <code>README</code> styling is actually really nice</p>
+</blockquote>
+<h2 id="background">Background</h2>
+<p>If you have a little side project, often you might want a simple landing page. The GitHub <code>README</code> rendering is really beautifully done: clean, simple and modern.</p>
+<p>Using your GitHub <code>README</code> as the main landing point works great for open source projects, where your visitors are developers and are familiar with GitHub, as well as you have all the text right where the code, the Issues and PRs are. But for some projects this isn't ideal:</p>
+<ul>
+<li>Maybe your project isn't actually an open source project, so you can't just host a <code>README</code> on GitHub</li>
+<li>If you want to link to just the <code>README</code>, you could append <code>#readme</code> to your browser URL (making the URL less pretty), or the visitor has to know they have to scroll down</li>
+<li>The mobile page of GitHub is still pretty bad, and it only renders the first few lines, as soon as you have a logo and badges on your page, it doesn't render at all, unless the visitor hits <code>View all of</code>README<code>.md</code></li>
+<li>Non-tech visitors don't know what's a <code>README.md</code></li>
+<li>The button is small, and people don't know what is</li>
+<li>GitHub renders the GitHub Pulse below, something that doens't make sense for non-tech visitors</li>
+<li>The URL changes from something nice like <code>github.com/krausefx/fastlane</code> to <code>github.com/krausefx/fastlane/blob/master/</code>README<code>.md</code>, meaning you can either link directly to this page to have a nice content, or you link to the root page and have the downside of the extra buttons</li>
+</ul>
+<p><a href="https://twitter.com/natfriedman/status/1126544306712350721">Nat announced</a>, that they working on improving the mobile experience, which is great news for everybody :)</p>
+<h2 id="solution">Solution</h2>
+<p>A simple script that converts a markdown (<code>.md</code>) file to a single HTML file, that includes all the HTML and CSS code inline, so you can host it anywhere.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>This project doesn't actually use the GitHub stylesheet, it's far too complex, and has legal implications.</p>
+<p>Instead this project does 2 things:</p>
+<ul>
+<li>Convert the Markdown to HTML using <a href="https://github.com/showdownjs/showdown">showdown</a>, the most popular JS markdown parser</li>
+<li>Inject the GitHub-like CSS code at the bottom of the page</li>
+</ul>
+<p>Resulting you get an HTML file that contains everything needed, so you can host the page on GitHub pages, AWS S3, Google Cloud Storage or anywhere else.</p>
+<ul>
+<li>Check out <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/README.md">the original markdown</a> file of this <code>README</code></li>
+<li>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/index.html">generated HTML code</a> generated based on this markdown file on</li>
+</ul>
+<h2 id="open-tasks">Open tasks</h2>
+<p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>, in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from <a href="https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438">krausefx.com css</a>.</p>
+<h2 id="playground-to-test">Playground to test</h2>
+<pre><code>{
+  testcode: 1
+}
+</code></pre>
+<ul>
+<li>Bullet list item 1</li>
+<li>Bullet list item 2</li>
+</ul>
+<hr />
+<ol>
+<li>Numbered list item 1</li>
+<li>Numbered list item 2</li>
+</ol>
+<p>Inline <code>code</code> comments are <code>100</code></p>
+<blockquote>
+  <p>Quoted texts are more gray and look differently</p>
+</blockquote>
+<p><strong>Bold text</strong> is <strong>bold</strong> and <a href="https://krausefx.com">inline links</a> work as well.</p>
+<h1 id="header-1">Header 1</h1>
+<h2 id="header-2">Header 2</h2>
+<h3 id="header-3">Header 3</h3>
+<h4 id="header-4">Header 4</h4>
+<h5 id="header-5">Header 5</h5>
+<p>Normal text content again</p>
+</div><style type='text/css'>body {
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  padding: 30px;
+}
+
+body > #content {
+  margin: 0px;
+  max-width: 900px;
+  border: 1px solid #e1e4e8;
+  padding: 10px 40px;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Links
+ */
+a {
+  color: #0366d6;
+  text-decoration: none; }
+  a:visited {
+    color: #0366d6; }
+  a:hover {
+    color: #0366d6;
+    text-decoration: underline; }
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+/**
+  * Code blocks
+  */
+
+code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+
+pre > code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+  font-size: 100%;
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  border-left-width: 3px;
+  padding: 0 1em;
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+blockquote * {
+  font-style: normal !important;
+  letter-spacing: 0;
+  color: #6a737d !important;
+}
+
+p {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #24292e; }
+
+ul {
+  margin-top: 0; }
+
+li {
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; }
+
+li + li {
+  margin-top: 0.25em; }
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #24292e; }
+
+a:visited {
+  color: #0366d6; }
+
+h1, h2, h3 {
+  border-bottom: 1px solid #eaecef;
+  color: #111;
+  /* Darker */ }</style></body></html>
