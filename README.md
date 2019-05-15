@@ -75,5 +75,54 @@ Inline `code` comments are `100`
 #### Header 4
 ##### Header 5
 
-Normal text content again
+<table>
+  <tr>
+    <td>
+      <img src="demo/screenshot1_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot2_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot3_framed.jpg">
+    </td>
+  </tr>
+</table>
 
+Normal text content again, lorem ipsum
+
+<table>
+  <tr>
+    <th>
+      Text 1
+    </th>
+    <th>
+      Text 2
+    </th>
+    <th>
+      Text 3
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
+    <td>
+      Text 2
+    </td>
+    <td>
+      Text 3
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
+    <td>
+      Text 2
+    </td>
+    <td>
+      Text 3
+    </td>
+  </tr>
+</table>

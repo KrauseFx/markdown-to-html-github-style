@@ -61,7 +61,55 @@
 <h3 id="header-3">Header 3</h3>
 <h4 id="header-4">Header 4</h4>
 <h5 id="header-5">Header 5</h5>
-<p>Normal text content again</p>
+<table>
+  <tr>
+    <td>
+      <img src="demo/screenshot1_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot2_framed.jpg">
+    </td>
+    <td>
+      <img src="demo/screenshot3_framed.jpg">
+    </td>
+  </tr>
+</table>
+<p>Normal text content again, lorem ipsum</p>
+<table>
+  <tr>
+    <th>
+      Text 1
+    </th>
+    <th>
+      Text 2
+    </th>
+    <th>
+      Text 3
+    </th>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
+    <td>
+      Text 2
+    </td>
+    <td>
+      Text 3
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Text 1
+    </td>
+    <td>
+      Text 2
+    </td>
+    <td>
+      Text 3
+    </td>
+  </tr>
+</table>
 </div><style type='text/css'>body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
@@ -152,6 +200,48 @@ blockquote * {
   font-style: normal !important;
   letter-spacing: 0;
   color: #6a737d !important;
+}
+
+/**
+ * Tablers
+ */
+table {
+  border-spacing: 2px;
+  display: block;
+  font-size: 14px;
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 16px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+/**
+ * Others
+ */
+
+img {
+  max-width: 100%;
 }
 
 p {
