@@ -1,6 +1,7 @@
 var showdown  = require('showdown');
 var fs = require('fs');
 let filename = "README.md"
+let pageTitle = process.argv[2] || ""
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
   fs.readFile(__dirname + '/' + filename, function (err, data) {
@@ -15,10 +16,23 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       ghMentions: true,
     });
 
-    let preContent = "<html><body><div id='content'>"
-    let postContent = "</div><style type='text/css'>" + styleData + "</style></body></html>";
+    let preContent = `
+    <html>
+      <head>
+        <title>` + pageTitle + `</title>
+      </head>
+      <body>
+        <div id='content'>
+    `
 
-    html = preContent + converter.makeHtml(text) + "\n" + postContent
+    let postContent = `
+
+        </div>
+        <style type='text/css'>` + styleData + `</style>
+      </body>
+    </html>`;
+
+    html = preContent + converter.makeHtml(text) + postContent
 
     converter.setFlavor('github');
     console.log(html);

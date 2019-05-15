@@ -1,4 +1,11 @@
-<html><body><div id='content'><h1 id="markdown-to-github-style-web">Markdown to GitHub style web</h1>
+
+    <html>
+      <head>
+        <title>markdown-to-html-github-style</title>
+      </head>
+      <body>
+        <div id='content'>
+    <h1 id="markdown-to-github-style-web">Markdown to GitHub style web</h1>
 <blockquote>
   <p>Because GitHub's <code>README</code> styling is actually really nice</p>
 </blockquote>
@@ -36,6 +43,9 @@
 <li>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style">GitHub rendered README</a></li>
 <li>Check out the <a href="https://markdown-to-github-style-web.com">README rendered by this project</a></li>
 </ul>
+<h2 id="usage">Usage</h2>
+<pre><code>node convert.js MyPageTitle
+</code></pre>
 <h2 id="open-tasks">Open tasks</h2>
 <p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>, in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from <a href="https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438">krausefx.com css</a>.</p>
 <h2 id="playground-to-test">Playground to test</h2>
@@ -116,7 +126,9 @@
     🔰 Raw HTML code for custom style 🔰
   </a>
 </h3>
-</div><style type='text/css'>body {
+
+        </div>
+        <style type='text/css'>body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background-color: #fdfdfd;
@@ -279,4 +291,6 @@ a:visited {
 h1, h2, h3 {
   border-bottom: 1px solid #eaecef;
   color: #111;
-  /* Darker */ }</style></body></html>
+  /* Darker */ }</style>
+      </body>
+    </html>

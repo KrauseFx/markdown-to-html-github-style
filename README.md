@@ -45,6 +45,12 @@ Resulting you get an HTML file that contains everything needed, so you can host 
 - Check out the [GitHub rendered README](https://github.com/KrauseFx/markdown-to-html-github-style)
 - Check out the [README rendered by this project](https://markdown-to-github-style-web.com)
 
+## Usage
+
+```
+node convert.js MyPageTitle
+```
+
 ## Open tasks
 
 Check out the [open issues](https://github.com/KrauseFx/markdown-to-html-github-style/issues), in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from [krausefx.com css](https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438).
