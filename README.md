@@ -1,4 +1,4 @@
-# `markdown-to-github-style-web.com`
+# Markdown to GitHub style web
 
 > Because GitHub's `README` styling is actually really nice
 

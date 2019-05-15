@@ -1,9 +1,9 @@
-<html><body><div id='content'><h1 id="markdown-to-github-style-webcom"><code>markdown-to-github-style-web.com</code></h1>
+<html><body><div id='content'><h1 id="markdown-to-github-style-web">Markdown to GitHub style web</h1>
 <blockquote>
   <p>Because GitHub's <code>README</code> styling is actually really nice</p>
 </blockquote>
 <h2 id="background">Background</h2>
-<p>If you have a little side project, often you might want a simple landing page. The GitHub <code>README</code> rendering is really beautifully done: clean, simple and modern.</p>
+<p>If you have a little side project, often you might want a simple landing page. The GitHub <code>README</code> rendering is really beautifully done: clean, simple and modern. The official <a href="https://developer.github.com/v3/markdown/">GitHub markdown to HTML API</a> generates the HTML code, but not the stylesheets necessary to make it look nice.</p>
 <p>Using your GitHub <code>README</code> as the main landing point works great for open source projects, where your visitors are developers and are familiar with GitHub, as well as you have all the text right where the code, the Issues and PRs are. But for some projects this isn't ideal:</p>
 <ul>
 <li>Maybe your project isn't actually an open source project, so you can't just host a <code>README</code> on GitHub</li>
@@ -17,17 +17,20 @@
 <p><a href="https://twitter.com/natfriedman/status/1126544306712350721">Nat announced</a>, that they working on improving the mobile experience, which is great news for everybody :)</p>
 <h2 id="solution">Solution</h2>
 <p>A simple script that converts a markdown (<code>.md</code>) file to a single HTML file, that includes all the HTML and CSS code inline, so you can host it anywhere.</p>
+<p>There is no need to use this script if you already convert your markdown file to HTML, you can directly use the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/style.css">stylesheet</a> of this repo.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>This project doesn't actually use the GitHub stylesheet, it's far too complex, and has legal implications.</p>
 <p>Instead this project does 2 things:</p>
 <ul>
-<li>Convert the Markdown to HTML using <a href="https://github.com/showdownjs/showdown">showdown</a>, the most popular JS markdown parser</li>
+<li>Convert the Markdown to HTML using <a href="https://github.com/showdownjs/showdown">showdown</a>, the most popular JS markdown parser. This could be replaced by the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues/2">official GitHub markdown to HTML API</a></li>
 <li>Inject the GitHub-like CSS code at the bottom of the page</li>
 </ul>
 <p>Resulting you get an HTML file that contains everything needed, so you can host the page on GitHub pages, AWS S3, Google Cloud Storage or anywhere else.</p>
 <ul>
 <li>Check out <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/README.md">the original markdown</a> file of this <code>README</code></li>
-<li>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/index.html">generated HTML code</a> generated based on this markdown file on</li>
+<li>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/index.html">raw generated HTML code</a> generated based on this markdown file on</li>
+<li>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style">GitHub rendered README</a></li>
+<li>Check out the <a href="https://markdown-to-github-style-web.com">README by this project</a></li>
 </ul>
 <h2 id="open-tasks">Open tasks</h2>
 <p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>, in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from <a href="https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438">krausefx.com css</a>.</p>
