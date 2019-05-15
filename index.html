@@ -1,11 +1,11 @@
 
-    <html>
-      <head>
-        <title>markdown-to-html-github-style</title>
-      </head>
-      <body>
-        <div id='content'>
-    <h1 id="markdown-to-github-style-web">Markdown to GitHub style web</h1>
+      <html>
+        <head>
+          <title></title>
+        </head>
+        <body>
+          <div id='content'>
+      <h1 id="markdown-to-github-style-web">Markdown to GitHub style web</h1>
 <blockquote>
   <p>Because GitHub's <code>README</code> styling is actually really nice</p>
 </blockquote>
@@ -44,13 +44,15 @@
 <li>Check out the <a href="https://markdown-to-github-style-web.com">README rendered by this project</a></li>
 </ul>
 <h2 id="usage">Usage</h2>
-<pre><code>node convert.js MyPageTitle
+<pre><code>hljs <span class="hljs-keyword">node</span> <span class="hljs-title">convert</span>.js MyPageTitle
 </code></pre>
 <h2 id="open-tasks">Open tasks</h2>
-<p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>, in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from <a href="https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438">krausefx.com css</a>.</p>
+<p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>.</p>
 <h2 id="playground-to-test">Playground to test</h2>
-<pre><code>{
-  testcode: 1
+<p>Syntax highlighting is also supported. We use <a href="https://highlightjs.org/">highlight.js</a>. We automatically try to detect what language you are using but you can also specify the language if you'd like. You can use <a href="https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases">this</a> guide for language name aliases.</p>
+<p>Here's an example of syntax highlighting:</p>
+<pre><code class="hljs js language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isSyntaxHighlightingSupported</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
 }
 </code></pre>
 <ul>
@@ -129,8 +131,8 @@
   </a>
 </h3>
 
-        </div>
-        <style type='text/css'>body {
+          </div>
+          <style type='text/css'>body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background-color: #fdfdfd;
@@ -294,5 +296,105 @@ h1, h2, h3 {
   border-bottom: 1px solid #eaecef;
   color: #111;
   /* Darker */ }</style>
-      </body>
-    </html>
+          <style type='text/css'>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style>
+        </body>
+      </html>

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "highlight.js": "^9.15.6",
     "showdown": "^1.9.0"
   }
 }
