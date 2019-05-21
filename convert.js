@@ -20,6 +20,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     <html>
       <head>
         <title>` + pageTitle + `</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body>
         <div id='content'>
