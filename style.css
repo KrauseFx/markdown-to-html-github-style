@@ -11,6 +11,12 @@ body {
   padding: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 5px;
+  }
+}
+
 body > #content {
   margin: 0px;
   max-width: 900px;
