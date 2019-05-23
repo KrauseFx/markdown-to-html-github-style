@@ -22,7 +22,7 @@
 <li>Non-tech visitors don't know what's a <code>README.md</code></li>
 <li>The button is small, and people don't know what is</li>
 <li>GitHub renders the GitHub Pulse below, something that doens't make sense for non-tech visitors</li>
-<li>The URL changes from something nice like <code>github.com/krausefx/fastlane</code> to <code>github.com/krausefx/fastlane/blob/master/</code>README<code>.md</code>, meaning you can either link directly to this page to have a nice content, or you link to the root page and have the downside of the extra buttons</li>
+<li>The URL changes from something nice like <code>github.com/krausefx/fastlane</code> to <code>github.com/krausefx/fastlane/blob/master/README.md</code>, meaning you can either link directly to this page to have a nice content, or you link to the root page and have the downside of the extra buttons</li>
 <li><a href="https://twitter.com/natfriedman/status/1126544306712350721">Nat announced</a>, that they working on improving the mobile experience, which is great news for everybody :)</li></ul></li>
 <li>You can't use your own domain</li>
 <li>If you use your own domain, you have to use GitHub Pages (which is excellent btw), but then you have to have HTML files ready, which is exactly what this project solves.</li>
@@ -148,6 +148,10 @@
   body {
     padding: 5px;
   }
+
+  body > #content {
+    padding: 0px 20px !important;
+  }
 }
 
 body > #content {
@@ -191,6 +195,7 @@ code {
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
+  word-wrap: break-word;
   padding: .2em .4em;
   font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
 }
