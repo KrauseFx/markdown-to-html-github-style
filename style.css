@@ -32,6 +32,16 @@ body > #content {
   margin-right: auto;
 }
 
+hr {
+  color: #bbb;
+  background-color: #bbb;
+  height: 1px;
+  flex: 0 1 auto;
+  margin: 1em 0;
+  padding: 0;
+  border: none;
+}
+
 /**
  * Links
  */
