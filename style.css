@@ -17,7 +17,7 @@ body {
   }
 
   body > #content {
-    padding: 0px 20px !important;
+    padding: 0px 20px 20px 20px !important;
   }
 }
 
