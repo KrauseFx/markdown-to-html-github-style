@@ -4,7 +4,7 @@ let filename = "README.md"
 let pageTitle = process.argv[2] || ""
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
-  fs.readFile(__dirname + '/' + filename, function (err, data) {
+  fs.readFile(process.cwd() + '/' + filename, function (err, data) {
     if (err) {
       throw err; 
     }
@@ -38,9 +38,13 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     converter.setFlavor('github');
     console.log(html);
 
-    let filePath = __dirname + "/index.html";
-    fs.writeFile(filePath, html, function(err) { 
-      console.log("Done, saved to " + filePath);
-    }); 
+    let filePath = process.cwd() + "/README.html";
+    fs.writeFile(filePath, html, { flag: "wx" }, function(err) {
+      if (err) {
+        console.log("File '" + filePath + "' already exists. Aborted!");
+      } else {
+        console.log("Done, saved to " + filePath);
+      }
+    });
   });
 });
