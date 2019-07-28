@@ -51,6 +51,8 @@ Resulting you get an HTML file that contains everything needed, so you can host 
 node convert.js MyPageTitle
 ```
 
+This will read the `README.md` from your current working directory and output the resulting HTML as `README.html` in the same directory.
+
 ## Open tasks
 
 Check out the [open issues](https://github.com/KrauseFx/markdown-to-html-github-style/issues), in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from [krausefx.com css](https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438).

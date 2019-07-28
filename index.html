@@ -47,6 +47,7 @@
 <h2 id="usage">Usage</h2>
 <pre><code>node convert.js MyPageTitle
 </code></pre>
+<p>This will read the <code>README.md</code> from your current working directory and output the resulting HTML as <code>README.html</code> to the same directory.</p>
 <h2 id="open-tasks">Open tasks</h2>
 <p>Check out the <a href="https://github.com/KrauseFx/markdown-to-html-github-style/issues">open issues</a>, in particular code blocks currently don't support syntax highlighting, however that's something that's rather easy to add. For a minimalistic stylesheet we could take the styles from <a href="https://github.com/KrauseFx/krausefx.com/blob/021186e228e183904af68ad8fc500c35107f00ae/assets/main.scss#L345-L438">krausefx.com css</a>.</p>
 <h2 id="playground-to-test">Playground to test</h2>
@@ -150,7 +151,7 @@
   }
 
   body > #content {
-    padding: 0px 20px !important;
+    padding: 0px 20px 20px 20px !important;
   }
 }
 
@@ -163,6 +164,16 @@ body > #content {
   border-radius: 2px;
   margin-left: auto;
   margin-right: auto;
+}
+
+hr {
+  color: #bbb;
+  background-color: #bbb;
+  height: 1px;
+  flex: 0 1 auto;
+  margin: 1em 0;
+  padding: 0;
+  border: none;
 }
 
 /**
