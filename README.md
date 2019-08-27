@@ -45,6 +45,12 @@ Resulting you get an HTML file that contains everything needed, so you can host 
 - Check out the [GitHub rendered README](https://github.com/KrauseFx/markdown-to-html-github-style)
 - Check out the [README rendered by this project](https://markdown-to-github-style-web.com)
 
+## Dependencies
+
+```
+npm install
+```
+
 ## Usage
 
 ```
