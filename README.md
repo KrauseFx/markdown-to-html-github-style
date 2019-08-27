@@ -140,7 +140,7 @@ Normal text content again, lorem ipsum
 </table>
 
 <h3 style="text-align: center; font-size: 35px; border: none">
-  <a href="https://t.me/WalkWithFriendsBot" target="_blank" style="text-decoration: none;">
-    🔰 Raw HTML code for custom style 🔰
+  <a href="https://github.com/KrauseFx/markdown-to-html-github-style" target="_blank" style="text-decoration: none;">
+    🔰 Open GitHub page 🔰
   </a>
 </h3>
