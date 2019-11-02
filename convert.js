@@ -14,6 +14,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       ghCompatibleHeaderId: true,
       simpleLineBreaks: true,
       ghMentions: true,
+      tables: true
     });
 
     let preContent = `
