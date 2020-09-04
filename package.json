@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.1"
   }
 }
