@@ -18,9 +18,11 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
     });
 
     let preContent = `
+    <!DOCTYPE html>
     <html>
       <head>
         <title>` + pageTitle + `</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body>
