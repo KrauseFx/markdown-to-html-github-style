@@ -43,7 +43,7 @@ Resulting you get an HTML file that contains everything needed, so you can host 
 - Check out [the original markdown](https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/README.md?raw=1) file of this `README`
 - Check out the [raw generated HTML code](https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/index.html) generated based on this markdown file on
 - Check out the [GitHub rendered README](https://github.com/KrauseFx/markdown-to-html-github-style)
-- Check out the [README rendered by this project](https://markdown-to-github-style-web.com)
+- Check out the [README rendered by this project](https://krausefx.github.io/markdown-to-html-github-style/)
 
 ## Dependencies
 
@@ -145,8 +145,3 @@ Normal text content again, lorem ipsum
   </tr>
 </table>
 
-<h3 style="text-align: center; font-size: 35px; border: none">
-  <a href="https://github.com/KrauseFx/markdown-to-html-github-style" target="_blank" style="text-decoration: none;">
-    🔰 Open GitHub page 🔰
-  </a>
-</h3>
