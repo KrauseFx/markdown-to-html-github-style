@@ -2,6 +2,7 @@ var showdown  = require('showdown');
 var fs = require('fs');
 let filename = "README.md"
 let pageTitle = process.argv[2] || ""
+let plausibleDomain = process.argv[3] || ""
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
   fs.readFile(process.cwd() + '/' + filename, function (err, data) {
@@ -17,11 +18,18 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       tables: true
     });
 
-    let preContent = `
+    var preContent = `
     <html>
       <head>
         <title>` + pageTitle + `</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">`
+
+    if (plausibleDomain.length > 0) {
+      preContent += `
+        <script defer data-domain="` + plausibleDomain + `" src="https://plausible.io/js/script.js"></script>
+      `
+    }
+    preContent += `
       </head>
       <body>
         <div id='content'>
