@@ -204,3 +204,7 @@ h3 {
     color: #111;
     /* Darker */
 }
+
+code>* {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+}
