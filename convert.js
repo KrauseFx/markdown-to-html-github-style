@@ -1,6 +1,6 @@
 var showdown  = require('showdown');
 var fs = require('fs');
-let filename = "README.md"
+let filename = process.argv[4] || "README.md"
 let pageTitle = process.argv[2] || ""
 let plausibleDomain = process.argv[3] || ""
 var hljs = require ('highlight.js');
