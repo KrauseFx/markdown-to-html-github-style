@@ -25,7 +25,7 @@ showdown.extension('highlight', function () {
         var lang = (left.match(/class=\"([^ \"]+)/) || [])[1];
         left = left.slice(0, 18) + 'hljs ' + left.slice(18);
         if (lang && hljs.getLanguage(lang)) {
-          return left + hljs.highlight(lang, match).value + right;
+          return left + hljs.highlight(match, {language: lang}).value + right;
         } else {
           return left + hljs.highlightAuto(match).value + right;
         }
@@ -80,9 +80,10 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
       html = preContent + converter.makeHtml(text) + postContent
 
       converter.setFlavor('github');
-      console.log(html);
+      // console.log(html);
 
-      let filePath = process.cwd() + "/README.html";
+      let markdownFileNameWithoutPath = filename.replace(".md", ".html")
+      let filePath = process.cwd() + "/" + markdownFileNameWithoutPath
       fs.writeFile(filePath, html, { flag: "wx" }, function(err) {
         if (err) {
           console.log("File '" + filePath + "' already exists. Aborted!");
