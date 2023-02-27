@@ -31,6 +31,11 @@ body>#content {
     margin-right: auto;
 }
 
+summary {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 hr {
     color: #bbb;
     background-color: #bbb;
@@ -39,6 +44,11 @@ hr {
     margin: 1em 0;
     padding: 0;
     border: none;
+}
+
+.hljs-operator {
+    color: #868686;
+    /* There is a bug where the syntax highlighter would pick no color for e.g. `&&` symbols in the code samples. Let's overwrite this */
 }
 
 
